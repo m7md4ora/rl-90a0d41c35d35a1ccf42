@@ -1,1 +1,10 @@
-if(!self.define){let s,e={};const i=(i,n)=>(i=new URL(i+".js",n).href,e[i]||new Promise(e=>{if("document"in self){const s=document.createElement("script");s.src=i,s.onload=e,document.head.appendChild(s)}else s=i,importScripts(i),e()}).then(()=>{let s=e[i];if(!s)throw new Error(`Module ${i} didn’t register its module`);return s}));self.define=(n,r)=>{const l=s||("document"in self?document.currentScript.src:"")||location.href;if(e[l])return;let o={};const u=s=>i(s,l),t={module:{uri:l},exports:o,require:u};e[l]=Promise.all(n.map(s=>t[s]||u(s))).then(s=>(r(...s),o))}}define(["./workbox-9c191d2f"],function(s){"use strict";importScripts("push-sw.js"),self.skipWaiting(),s.clientsClaim(),s.precacheAndRoute([{url:"push-sw.js",revision:"3283b5191f2478a18b58731fdb740866"},{url:"index.html",revision:"c1531cc695e8a2f574213280013b1a2b"},{url:"assets/workbox-window.prod.es5-Bd17z0YL.js",revision:null},{url:"assets/rolldown-runtime-COiEfhsA.js",revision:null},{url:"assets/purify.es-Dzkdzyfv.js",revision:null},{url:"assets/jspdf.es.min-CfxqZleY.js",revision:null},{url:"assets/index.es-BY9mkkhs.js",revision:null},{url:"assets/index-CuFAHVFS.js",revision:null},{url:"assets/index-CCS6clwW.css",revision:null},{url:"assets/html2canvas-BTnHhQlH.js",revision:null},{url:"assets/browser-B5ODykp-.js",revision:null},{url:"assets/Schedule-DMrQJTOD.js",revision:null},{url:"assets/Reports-BSKJiDgu.js",revision:null},{url:"icon-192.png",revision:"21a033ad1645a7652008f5277f5e4ef7"},{url:"icon-512.png",revision:"369130bda544c1d7b592331e3e6612fe"},{url:"manifest.webmanifest",revision:"f825132535f4c28378ac7a7db8eaf5d5"}],{}),s.cleanupOutdatedCaches(),s.registerRoute(new s.NavigationRoute(s.createHandlerBoundToURL("index.html")))});
+// retired: this address moved to https://m7md4ora.github.io/alrowad-lab/
+const N = 'https://m7md4ora.github.io/alrowad-lab/'
+self.addEventListener('install', () => self.skipWaiting())
+self.addEventListener('activate', e => e.waitUntil((async () => {
+  try { for (const k of await caches.keys()) await caches.delete(k) } catch (_) {}
+  const cs = await self.clients.matchAll({ type: 'window', includeUncontrolled: true })
+  try { await self.registration.unregister() } catch (_) {}
+  for (const c of cs) { try { const u = new URL(c.url); c.navigate(N + u.search + u.hash) } catch (_) {} }
+})()))
+self.addEventListener('fetch', () => {})

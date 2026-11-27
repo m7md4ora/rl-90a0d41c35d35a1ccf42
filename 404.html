@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>الرواد لاب - الرابط اتنقل</title>
+<link rel="icon" href="favicon.png">
+<link rel="manifest" href="./manifest.webmanifest">
+<style>body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f4f6fb;font-family:system-ui,Tahoma,sans-serif;color:#172033}
+.c{max-width:360px;margin:16px;padding:24px;background:#fff;border-radius:16px;box-shadow:0 4px 18px rgba(30,58,138,.12);text-align:center}
+h1{font-size:20px;color:#1E3A8A;margin:8px 0}p{font-size:15px;line-height:1.7;margin:8px 0}
+a.b{display:inline-block;margin-top:12px;padding:12px 22px;background:#1E3A8A;color:#fff;border-radius:12px;text-decoration:none;font-weight:700}
+img{width:72px;height:72px;object-fit:contain}</style>
+</head>
+<body>
+<div class="c"><img src="logo-heart.png" alt=""><h1>الرابط اتنقل</h1>
+<p>الرواد لاب بقى على رابط جديد. هتتحول تلقائيًا، ولو ماحصلش دوس على الزرار.</p>
+<p style="font-size:13px;color:#64748b">هتحتاج تسجل دخول تاني على الرابط الجديد، وتفعّل الإشعارات من جديد لو كنت مفعّلها.</p>
+<a class="b" id="go" href="https://m7md4ora.github.io/alrowad-lab/">افتح الرابط الجديد</a></div>
+<script>
+(function(){var N='https://m7md4ora.github.io/alrowad-lab/';var t=N+location.search+location.hash;
+document.getElementById('go').href=t;
+if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(function(r){r.forEach(function(x){x.update()})}).catch(function(){})}
+location.replace(t)})();
+</script>
+<noscript><meta http-equiv="refresh" content="3;url=https://m7md4ora.github.io/alrowad-lab/"></noscript>
+</body>
+</html>
